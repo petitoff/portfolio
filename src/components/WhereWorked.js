@@ -41,11 +41,11 @@ const StyledTabList = styled.div`
     margin-left: -50px;
     margin-bottom: 30px;
   }
-  @media (max-width: 480px) {
+  /* @media (max-width: 480px) {
     width: calc(100% + 50px);
     padding-left: 25px;
     margin-left: -25px;
-  }
+  } */
 
   li {
     &:first-of-type {
@@ -135,9 +135,9 @@ const StyledHighlight = styled.div`
       calc(${({ activeTabId }) => activeTabId} * var(--tab-width))
     );
   }
-  @media (max-width: 480px) {
+  /* @media (max-width: 480px) {
     margin-left: 25px;
-  }
+  } */
 `;
 
 const StyledTabPanels = styled.div`
