@@ -23,6 +23,8 @@ const AnimatedContainer = ({ children }) => {
   const [isVisible, setIsVisible] = React.useState(false);
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
