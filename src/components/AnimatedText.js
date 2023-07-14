@@ -23,15 +23,13 @@ const AnimatedText = ({ children }) => {
   const [isVisible, setIsVisible] = React.useState(false);
 
   useEffect(() => {
-    // Sprawdź, czy jesteś w środowisku przeglądarki
     if (typeof window !== "undefined") {
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               setIsVisible(true);
-            } else {
-              setIsVisible(false);
+              observer.disconnect(); // Przerywa obserwację po pierwszym wywołaniu
             }
           });
         },
@@ -44,7 +42,6 @@ const AnimatedText = ({ children }) => {
         observer.observe(containerRef.current);
       }
 
-      // Czyść obserwator, gdy komponent jest usuwany
       return () => {
         observer.disconnect();
       };
