@@ -33,10 +33,10 @@ const StyledTabList = styled.div`
   margin: 0;
   list-style: none;
 
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     display: flex;
     overflow-x: auto;
-    width: calc(100% + 100px);
+    width: var(--tab-width * ${(props) => props.numberOfJobs});
     padding-left: 50px;
     margin-left: -50px;
     margin-bottom: 30px;
@@ -84,8 +84,8 @@ const StyledTabButton = styled.button`
 
   @media (max-width: 768px) {
     padding: 0 15px 2px;
-  }
-  @media (max-width: 600px) {
+    min-width: 120px;
+
     ${flexCenter}
     min-width: 120px;
     padding: 0 15px;
@@ -93,6 +93,14 @@ const StyledTabButton = styled.button`
     border-bottom: 2px solid var(--lightest-navy);
     text-align: center;
   }
+  /* @media (max-width: 600px) {
+    ${flexCenter}
+    min-width: 120px;
+    padding: 0 15px;
+    border-left: 0;
+    border-bottom: 2px solid var(--lightest-navy);
+    text-align: center;
+  } */
 
   &:hover,
   &:focus {
@@ -116,7 +124,7 @@ const StyledHighlight = styled.div`
   transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition-delay: 0.1s;
 
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     top: auto;
     bottom: 0;
     width: 100%;
@@ -251,6 +259,7 @@ const WhereWorked = () => {
             role="tablist"
             aria-label="Job tabs"
             onKeyDown={(e) => onKeyDown(e)}
+            numberOfJobs={jobsData.length}
           >
             {jobsData &&
               jobsData.map(({ frontmatter }, i) => {
