@@ -23,28 +23,32 @@ const AnimatedText = ({ children }) => {
   const [isVisible, setIsVisible] = React.useState(false);
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
+    // Sprawdź, czy jesteś w środowisku przeglądarki
+    if (typeof window !== "undefined") {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setIsVisible(true);
+            } else {
+              setIsVisible(false);
+            }
+          });
+        },
+        {
+          threshold: 0.5,
+        }
+      );
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-          } else {
-            setIsVisible(false);
-          }
-        });
-      },
-      {
-        threshold: 0.5,
+      if (containerRef.current) {
+        observer.observe(containerRef.current);
       }
-    );
 
-    observer.observe(containerRef.current);
-
-    return () => {
-      observer.disconnect();
-    };
+      // Czyść obserwator, gdy komponent jest usuwany
+      return () => {
+        observer.disconnect();
+      };
+    }
   }, []);
 
   return (

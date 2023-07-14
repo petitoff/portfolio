@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import AnimatedText from "./AnimatedText";
 import { titleForSection } from "../styles/mixins";
 import AnimatedContainer from "./AnimatedContainer";
 

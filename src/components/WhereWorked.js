@@ -1,12 +1,10 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import AnimatedText from "./AnimatedText";
 import styled from "styled-components";
 import { fancyList, link, titleForSection } from "../styles/mixins";
 import { graphql, useStaticQuery } from "gatsby";
-import sr from "../utils/sr";
 import { KEY_CODES } from "../utils/index";
-import usePrefersReducedMotion from "../hooks/usePrefersReducedMotion";
-import { srConfig } from "../config";
+// import usePrefersReducedMotion from "../hooks/usePrefersReducedMotion";
 import { flexCenter } from "../styles/mixins";
 import { CSSTransition } from "react-transition-group";
 
@@ -201,18 +199,10 @@ const WhereWorked = () => {
   const [activeTabId, setActiveTabId] = useState(0);
   const [tabFocus, setTabFocus] = useState(null);
   const tabs = useRef([]);
-  const revealContainer = useRef(null);
-  const prefersReducedMotion = usePrefersReducedMotion();
+  // const revealContainer = useRef(null);
+  // const prefersReducedMotion = usePrefersReducedMotion();
 
-  useEffect(() => {
-    if (prefersReducedMotion) {
-      return;
-    }
-
-    sr.reveal(revealContainer.current, srConfig());
-  }, [prefersReducedMotion]);
-
-  const focusTab = () => {
+  const focusTab = useCallback(() => {
     if (tabs.current[tabFocus]) {
       tabs.current[tabFocus].focus();
       return;
@@ -225,9 +215,9 @@ const WhereWorked = () => {
     if (tabFocus < 0) {
       setTabFocus(tabs.current.length - 1);
     }
-  };
+  }, [tabFocus, tabs]);
 
-  // Only re-run the effect if tabFocus changes
+  // Only re-run the effect if tabFocus or focusTab changes
   useEffect(() => focusTab(), [tabFocus, focusTab]);
 
   // Focus on tabs when using up & down arrow keys
