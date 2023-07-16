@@ -5,6 +5,7 @@ import AboutMe from "../components/AboutMe";
 import WhereWorked from "../components/WhereWorked";
 import styled from "styled-components";
 import Projects from "../components/Projects";
+import FixedExternalLink from "../components/FixedExternalLink";
 
 const StyledMainContainer = styled.main`
   counter-reset: section;
@@ -12,13 +13,16 @@ const StyledMainContainer = styled.main`
 
 export default function Home() {
   return (
-    <Layout>
-      <StyledMainContainer>
-        <Hero />
-        <AboutMe />
-        <WhereWorked />
-        <Projects />
-      </StyledMainContainer>
-    </Layout>
+    <div>
+      <FixedExternalLink />
+      <Layout>
+        <StyledMainContainer>
+          <Hero />
+          <AboutMe />
+          <WhereWorked />
+          <Projects />
+        </StyledMainContainer>
+      </Layout>
+    </div>
   );
 }
