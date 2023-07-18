@@ -8,7 +8,8 @@ const Container = styled.div`
 const StyledAnimatedContainer = styled.div`
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 1s, transform 1s;
+  transition: opacity 1s ${(props) => props.delay}s,
+    transform 1s ${(props) => props.delay}s;
 
   ${(props) =>
     props.isVisible &&
@@ -18,7 +19,7 @@ const StyledAnimatedContainer = styled.div`
     `}
 `;
 
-const AnimatedContainer = ({ children }) => {
+const AnimatedContainer = ({ children, delay = 0 }) => {
   const containerRef = useRef(null);
   const [isVisible, setIsVisible] = React.useState(false);
 
@@ -50,7 +51,7 @@ const AnimatedContainer = ({ children }) => {
 
   return (
     <Container ref={containerRef}>
-      <StyledAnimatedContainer isVisible={isVisible}>
+      <StyledAnimatedContainer isVisible={isVisible} delay={delay}>
         {children}
       </StyledAnimatedContainer>
     </Container>

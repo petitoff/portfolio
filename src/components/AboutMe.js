@@ -45,8 +45,8 @@ const AboutMe = () => {
         </p>
         <p>
           Proficient in <Higlight>backend technologies</Higlight>, including C#,
-          .NET Framework, Java, and Java Spring Boot, with a focus on creating
-          efficient and scalable applications.
+          .NET Framework, .NET MAUI, Java, and Java Spring Boot, with a focus on
+          creating efficient and scalable applications.
         </p>
         <p>
           Adept at <Higlight>quickly learning</Higlight> new technologies and

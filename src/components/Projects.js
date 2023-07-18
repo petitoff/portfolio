@@ -8,7 +8,7 @@ import {
 } from "../styles/mixins";
 import AnimatedText from "./AnimatedText";
 import { graphql, useStaticQuery } from "gatsby";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image";
 import AnimatedContainer from "./AnimatedContainer";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
@@ -35,7 +35,7 @@ const StyledProject = styled.li`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 50px;
-  margin-bottom: 2.5rem;
+  margin-bottom: 4rem;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -112,11 +112,7 @@ const Projects = () => {
               title
               cover {
                 childImageSharp {
-                  gatsbyImageData(
-                    width: 1500
-                    placeholder: DOMINANT_COLOR
-                    formats: [AUTO, WEBP, AVIF]
-                  )
+                  gatsbyImageData(layout: FULL_WIDTH, quality: 100)
                 }
               }
               tech
@@ -142,14 +138,26 @@ const Projects = () => {
         {projects ? (
           projects.map(({ node }, i) => {
             const { frontmatter, html } = node;
-            const { title, cover, external, github, tech } = frontmatter;
-            const image = getImage(cover);
+            const { title, external, github, tech, cover } = frontmatter;
+
+            const image = getImage(cover.childImageSharp.gatsbyImageData);
+
+            let imageSrc = getSrc(cover.childImageSharp.gatsbyImageData);
+            let isGif = false;
+
+            if (imageSrc.endsWith(".gif")) {
+              isGif = true;
+            }
 
             return (
               <AnimatedContainer>
                 <StyledProject>
                   <StyledImage>
-                    <GatsbyImage image={image} alt={title} className="img" />
+                    {isGif ? (
+                      <img src={imageSrc} alt={title} className="img" />
+                    ) : (
+                      <GatsbyImage image={image} alt={title} className="img" />
+                    )}
                   </StyledImage>
                   <div>
                     <h3>{title}</h3>

@@ -1,5 +1,8 @@
+import { Link } from "gatsby";
 import React from "react";
 import styled from "styled-components";
+import { styledButton } from "../styles/mixins";
+import AnimationContainer from "./AnimatedContainer";
 
 const slideUpAnimation = `
   @keyframes slide-up {
@@ -63,6 +66,11 @@ const HeroSection = styled.section`
   }
 `;
 
+const StyledButton = styled.button`
+  ${styledButton}
+  margin-top: 50px;
+`;
+
 const Hero = () => {
   return (
     <HeroSection>
@@ -74,6 +82,12 @@ const Hero = () => {
           with proficiency in backend technologies and a passion for learning
           and innovation.
         </p>
+
+        <AnimationContainer delay={0.6}>
+          <Link to="/contact">
+            <StyledButton>Resume & Contact</StyledButton>
+          </Link>
+        </AnimationContainer>
       </div>
     </HeroSection>
   );
