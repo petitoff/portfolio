@@ -5,10 +5,12 @@ cover: "./demo.png"
 github: "https://github.com/petitoff/bookshelf"
 external: "https://bookshelf-petitoff.vercel.app/books"
 tech:
+  - TypeScript
   - React.js
   - Firebase
   - Redux Toolkit
   - Material UI
+  - SASS
   - Styled Components
   - React Router Dom
 ---

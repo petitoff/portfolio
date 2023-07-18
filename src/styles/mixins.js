@@ -82,3 +82,23 @@ export const highlightSpan = css`
   color: var(--green);
   font-weight: 600;
 `;
+
+export const styledButton = css`
+  color: var(--green);
+  background-color: transparent;
+  border: 1px solid var(--green);
+  border-radius: var(--border-radius);
+  padding: 1.25rem 1.75rem;
+  font-size: var(--fz-sm);
+  font-family: var(--font-mono);
+  line-height: 1;
+  text-decoration: none;
+  transition: var(--transition);
+
+  &:hover {
+    cursor: pointer;
+    outline: none;
+    box-shadow: 4px 4px 0 0 var(--green);
+    transform: translate(-5px, -5px);
+  }
+`;
