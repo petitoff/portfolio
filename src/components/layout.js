@@ -14,7 +14,7 @@ const LayoutContainer = styled.div`
     padding: 0px 50px;
   }
 
-  @media (max-width: 320px) {
+  @media (max-width: 420px) {
     padding: 0px 25px;
   }
 `;
