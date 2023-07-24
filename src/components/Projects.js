@@ -181,7 +181,11 @@ const Projects = () => {
 
                     <StyledProjectLinks>
                       {github && (
-                        <a href={github} aria-label="GitHub Link">
+                        <a
+                          href={github}
+                          aria-label="GitHub Link"
+                          target="blank"
+                        >
                           <FaGithub />
                         </a>
                       )}
@@ -190,6 +194,7 @@ const Projects = () => {
                           href={external}
                           aria-label="External Link"
                           className="external"
+                          target="blank"
                         >
                           <FaExternalLinkAlt />
                         </a>
