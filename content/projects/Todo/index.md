@@ -3,7 +3,7 @@ date: "2"
 title: "ToDo"
 cover: "./demo.png"
 github: "https://github.com/petitoff/todo-app"
-# external: "https://bookshelf-petitoff.vercel.app/books"
+external: "https://todo-petitoff.vercel.app/"
 tech:
   - Java Spring Boot
   - React.js

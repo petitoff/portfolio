@@ -6,6 +6,8 @@ import WhereWorked from "../components/WhereWorked";
 import styled from "styled-components";
 import Projects from "../components/Projects";
 import FixedExternalLink from "../components/FixedExternalLink";
+/* eslint-disable react/jsx-pascal-case */
+import SEO from "../components/SEO";
 
 const StyledMainContainer = styled.main`
   counter-reset: section;
@@ -14,6 +16,7 @@ const StyledMainContainer = styled.main`
 export default function Home() {
   return (
     <div>
+      <SEO title={"Błażej Domagała | portfolio"} />
       <FixedExternalLink />
       <Layout>
         <StyledMainContainer>
