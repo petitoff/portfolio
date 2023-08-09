@@ -131,9 +131,7 @@ const Projects = () => {
 
   return (
     <StyledProjectsSection>
-      <AnimatedText>
-        <h2>My Projects</h2>
-      </AnimatedText>
+      <AnimatedText>My Projects</AnimatedText>
 
       <StyledProjectsGrid>
         {projects ? (
@@ -151,7 +149,7 @@ const Projects = () => {
             }
 
             return (
-              <AnimatedContainer>
+              <AnimatedContainer key={i}>
                 <StyledProject>
                   <StyledImage>
                     {isGif ? (

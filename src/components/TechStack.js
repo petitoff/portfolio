@@ -69,8 +69,8 @@ export const TechStack = () => {
         <h2>Technologies</h2>
 
         <TechStackContainer>
-          {data.stack.map(({ title, image }) => (
-            <TechStackItem>
+          {data.stack.map(({ title, image }, i) => (
+            <TechStackItem key={i}>
               <img src={`icons/${image}`} alt={title} />
               <h3>{title}</h3>
             </TechStackItem>

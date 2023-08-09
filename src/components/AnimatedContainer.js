@@ -8,11 +8,11 @@ const Container = styled.div`
 const StyledAnimatedContainer = styled.div`
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 1s ${(props) => props.delay}s,
-    transform 1s ${(props) => props.delay}s;
+  transition: opacity 1s ${(props) => props.$delay}s,
+    transform 1s ${(props) => props.$delay}s;
 
   ${(props) =>
-    props.isVisible &&
+    props.$isVisible &&
     css`
       opacity: 1;
       transform: translateY(0);
@@ -30,7 +30,7 @@ const AnimatedContainer = ({ children, delay = 0 }) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               setIsVisible(true);
-              observer.disconnect(); // Przerywa obserwację po pierwszym wywołaniu
+              observer.disconnect();
             }
           });
         },
@@ -51,7 +51,7 @@ const AnimatedContainer = ({ children, delay = 0 }) => {
 
   return (
     <Container ref={containerRef}>
-      <StyledAnimatedContainer isVisible={isVisible} delay={delay}>
+      <StyledAnimatedContainer $isVisible={isVisible} $delay={delay}>
         {children}
       </StyledAnimatedContainer>
     </Container>
