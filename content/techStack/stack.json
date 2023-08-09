@@ -3,6 +3,7 @@
         {"title": "HTML", "image": "./html-5.png"},
         {"title": "CSS", "image": "./css-3.png"},
         {"title": "Tailwind", "image": "./tailwind.png"},
+        {"title": "SASS", "image": "./sass.png"},
         {"title": "javascript", "image": "./javascript.png"},
         {"title": "React", "image": "./react.png"},
         {"title": "Gatsby", "image": "./Gatsby_Logo.png"},
