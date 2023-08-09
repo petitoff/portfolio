@@ -8,6 +8,12 @@ I invite you to take a look at my portfolio where I showcase my experience, skil
 
 [Visit my portfolio](https://petitoff.vercel.app/)
 
+### Tech stack
+- javascript
+- gatsby
+- GraphQL
+- styled components
+
 ## Experience
 
 I have a strong background in working with React, React Native, JavaScript, and TypeScript, along with expertise in Redux Toolkit and React Router Doom. I'm proficient in backend technologies including C#, .NET Framework, Java, and Java Spring Boot, focusing on creating efficient and scalable applications.
