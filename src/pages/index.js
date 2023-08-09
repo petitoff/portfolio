@@ -23,8 +23,8 @@ export default function Home() {
         <StyledMainContainer>
           <Hero />
           <AboutMe />
-          <TechStack />
           <WhereWorked />
+          <TechStack />
           <Projects />
         </StyledMainContainer>
       </Layout>
