@@ -4,7 +4,6 @@ import styled from "styled-components";
 import { fancyList, link, titleForSection } from "../styles/mixins";
 import { graphql, useStaticQuery } from "gatsby";
 import { KEY_CODES } from "../utils/index";
-// import usePrefersReducedMotion from "../hooks/usePrefersReducedMotion";
 import { flexCenter } from "../styles/mixins";
 import { CSSTransition } from "react-transition-group";
 
@@ -41,11 +40,6 @@ const StyledTabList = styled.div`
     margin-left: -50px;
     margin-bottom: 30px;
   }
-  /* @media (max-width: 480px) {
-    width: calc(100% + 50px);
-    padding-left: 25px;
-    margin-left: -25px;
-  } */
 
   li {
     &:first-of-type {
@@ -93,14 +87,6 @@ const StyledTabButton = styled.button`
     border-bottom: 2px solid var(--lightest-navy);
     text-align: center;
   }
-  /* @media (max-width: 600px) {
-    ${flexCenter}
-    min-width: 120px;
-    padding: 0 15px;
-    border-left: 0;
-    border-bottom: 2px solid var(--lightest-navy);
-    text-align: center;
-  } */
 
   &:hover,
   &:focus {
@@ -135,9 +121,6 @@ const StyledHighlight = styled.div`
       calc(${({ activeTabId }) => activeTabId} * var(--tab-width))
     );
   }
-  /* @media (max-width: 480px) {
-    margin-left: 25px;
-  } */
 `;
 
 const StyledTabPanels = styled.div`
@@ -207,8 +190,6 @@ const WhereWorked = () => {
   const [activeTabId, setActiveTabId] = useState(0);
   const [tabFocus, setTabFocus] = useState(null);
   const tabs = useRef([]);
-  // const revealContainer = useRef(null);
-  // const prefersReducedMotion = usePrefersReducedMotion();
 
   const focusTab = useCallback(() => {
     if (tabs.current[tabFocus]) {

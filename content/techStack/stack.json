@@ -1,0 +1,17 @@
+{
+    "stack": [
+        {"title": "HTML", "image": "./html-5.png"},
+        {"title": "CSS", "image": "./css-3.png"},
+        {"title": "Tailwind", "image": "./tailwind.png"},
+        {"title": "SASS", "image": "./sass.png"},
+        {"title": "javascript", "image": "./javascript.png"},
+        {"title": "React", "image": "./react.png"},
+        {"title": "Gatsby", "image": "./Gatsby_Logo.png"},
+        {"title": "C#", "image": "./c-sharp.png"},
+        {"title": ".NET Framework", "image": "./dot-net-framework.png"},
+        {"title": "WPF", "image": "./wpf.png"},
+        {"title": ".NET MAUI", "image": "./dotnet-maui.png"},
+        {"title": "java", "image": "./java.png"},
+        {"title": "Spring Boot", "image": "./spring-boot.png"}
+    ]
+}
