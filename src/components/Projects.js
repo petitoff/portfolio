@@ -143,7 +143,7 @@ const Projects = () => {
 
             const image = getImage(cover.childImageSharp.gatsbyImageData);
 
-            let imageSrc = getSrc(cover.childImageSharp.gatsbyImageData);
+            const imageSrc = getSrc(cover.childImageSharp.gatsbyImageData);
             let isGif = false;
 
             if (imageSrc.endsWith(".gif")) {
