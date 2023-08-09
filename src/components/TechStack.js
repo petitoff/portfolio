@@ -49,13 +49,14 @@ const TechStackItem = styled.div`
     width: 100%;
     height: 100%;
     object-fit: contain;
-    transform: scale(0.9);
+    transform: scale(0.8);
   }
 
   & > h3 {
     font-size: 0.8rem;
     text-align: center;
-    margin: 0.1rem 0;
+    margin: 0;
+    margin-bottom: 0.5rem;
     font-weight: 400;
   }
 `;
