@@ -46,17 +46,16 @@ const TechStackItem = styled.div`
   }
 
   & > img {
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
     object-fit: contain;
-    transform: scale(0.8);
   }
 
   & > h3 {
     font-size: 0.8rem;
     text-align: center;
     margin: 0;
-    margin-bottom: 0.5rem;
+    /* margin-bottom: 0.5rem; */
     font-weight: 400;
   }
 `;
