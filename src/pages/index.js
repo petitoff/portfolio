@@ -5,6 +5,7 @@ import AboutMe from "../components/AboutMe";
 import WhereWorked from "../components/WhereWorked";
 import styled from "styled-components";
 import Projects from "../components/Projects";
+import { TechStack } from "../components/TechStack";
 import FixedExternalLink from "../components/FixedExternalLink";
 /* eslint-disable react/jsx-pascal-case */
 import SEO from "../components/SEO";
@@ -22,6 +23,7 @@ export default function Home() {
         <StyledMainContainer>
           <Hero />
           <AboutMe />
+          <TechStack />
           <WhereWorked />
           <Projects />
         </StyledMainContainer>
