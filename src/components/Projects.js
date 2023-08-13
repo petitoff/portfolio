@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import {
   resetList,
@@ -67,10 +67,42 @@ const StyledImage = styled.div`
   .img {
     width: 100%;
     max-width: 100%;
+    transition: filter 0.3s ease-in-out;
+
+    &:hover {
+      filter: brightness(0.5);
+      cursor: pointer;
+    }
   }
 
   .gif {
     width: 100%;
+    transition: filter 0.3s ease-in-out;
+
+    &:hover {
+      filter: brightness(0.5);
+      cursor: pointer;
+    }
+  }
+
+  &.expanded {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.2); /* Dodanie transparentnego tła */
+    mix-blend-mode: normal; /* Zmiana trybu mieszania kolorów */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
   }
 `;
 
@@ -105,6 +137,16 @@ const StyledDescriptionContainer = styled.div`
 `;
 
 const Projects = () => {
+  const [expandedImage, setExpandedImage] = useState(null);
+
+  const handleImageClick = (imageSrc) => {
+    setExpandedImage(imageSrc);
+  };
+
+  const handleCloseImage = () => {
+    setExpandedImage(null);
+  };
+
   const data = useStaticQuery(graphql`
     query {
       projects: allMarkdownRemark(
@@ -135,6 +177,12 @@ const Projects = () => {
     <StyledProjectsSection>
       <AnimatedText>My Projects</AnimatedText>
 
+      {expandedImage && (
+        <StyledImage className="expanded" onClick={handleCloseImage}>
+          <img src={expandedImage} alt="Expanded Image" />
+        </StyledImage>
+      )}
+
       <StyledProjectsGrid>
         {projects ? (
           projects.map(({ node }, i) => {
@@ -148,27 +196,24 @@ const Projects = () => {
               isGif = true;
             }
 
-            // console.log(cover.childImageSharp);
-
-            // const image = getImage(cover.childImageSharp?.gatsbyImageData);
-
-            // const imageSrc = getSrc(cover.childImageSharp?.gatsbyImageData);
-            // let isGif = false;
-
-            // console.log(image);
-
-            // if (imageSrc?.endsWith(".gif")) {
-            //   isGif = true;
-            // }
-
             return (
               <AnimatedContainer key={i}>
                 <StyledProject>
                   <StyledImage>
                     {isGif ? (
-                      <img src={imageSrc} alt={title} className="gif" />
+                      <img
+                        src={imageSrc}
+                        alt={title}
+                        className="gif"
+                        onClick={() => handleImageClick(imageSrc)}
+                      />
                     ) : (
-                      <img src={imageSrc} alt={title} className="img" />
+                      <img
+                        src={imageSrc}
+                        alt={title}
+                        className="img"
+                        onClick={() => handleImageClick(imageSrc)}
+                      />
                     )}
                   </StyledImage>
                   <div>
