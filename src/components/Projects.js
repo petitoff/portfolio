@@ -68,6 +68,10 @@ const StyledImage = styled.div`
     width: 100%;
     max-width: 100%;
   }
+
+  .gif {
+    width: 100%;
+  }
 `;
 
 const StyledProjectLinks = styled.div`
@@ -112,9 +116,7 @@ const Projects = () => {
             frontmatter {
               title
               cover {
-                childImageSharp {
-                  gatsbyImageData(layout: FULL_WIDTH, quality: 100)
-                }
+                publicURL
               }
               tech
               github
@@ -139,23 +141,34 @@ const Projects = () => {
             const { frontmatter, html } = node;
             const { title, external, github, tech, cover } = frontmatter;
 
-            const image = getImage(cover.childImageSharp.gatsbyImageData);
-
-            const imageSrc = getSrc(cover.childImageSharp.gatsbyImageData);
+            const imageSrc = cover.publicURL;
             let isGif = false;
 
             if (imageSrc.endsWith(".gif")) {
               isGif = true;
             }
 
+            // console.log(cover.childImageSharp);
+
+            // const image = getImage(cover.childImageSharp?.gatsbyImageData);
+
+            // const imageSrc = getSrc(cover.childImageSharp?.gatsbyImageData);
+            // let isGif = false;
+
+            // console.log(image);
+
+            // if (imageSrc?.endsWith(".gif")) {
+            //   isGif = true;
+            // }
+
             return (
               <AnimatedContainer key={i}>
                 <StyledProject>
                   <StyledImage>
                     {isGif ? (
-                      <img src={imageSrc} alt={title} className="img" />
+                      <img src={imageSrc} alt={title} className="gif" />
                     ) : (
-                      <GatsbyImage image={image} alt={title} className="img" />
+                      <img src={imageSrc} alt={title} className="img" />
                     )}
                   </StyledImage>
                   <div>
