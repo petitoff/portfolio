@@ -35,7 +35,7 @@ const StyledTabList = styled.div`
   @media (max-width: 768px) {
     display: flex;
     overflow-x: auto;
-    width: var(--tab-width * ${(props) => props.numberOfJobs});
+    width: var(--tab-width * ${(props) => props.numberofjobs});
     padding-left: 50px;
     margin-left: -50px;
     margin-bottom: 30px;
@@ -70,7 +70,7 @@ const StyledTabButton = styled.button`
   padding: 0 20px 2px;
   border-left: 2px solid var(--lightest-navy);
   background-color: transparent;
-  color: ${({ isActive }) => (isActive ? "var(--green)" : "var(--slate)")};
+  color: ${(props) => (props.active ? "var(--green)" : "var(--slate)")};
   font-family: var(--font-mono);
   font-size: var(--fz-xs);
   text-align: left;
@@ -240,7 +240,7 @@ const WhereWorked = () => {
             role="tablist"
             aria-label="Job tabs"
             onKeyDown={(e) => onKeyDown(e)}
-            numberOfJobs={jobsData.length}
+            numberofjobs={jobsData.length}
           >
             {jobsData &&
               jobsData.map(({ frontmatter }, i) => {
@@ -248,7 +248,7 @@ const WhereWorked = () => {
                 return (
                   <StyledTabButton
                     key={i}
-                    isActive={activeTabId === i}
+                    active={activeTabId === i}
                     onClick={() => setActiveTabId(i)}
                     ref={(el) => (tabs.current[i] = el)}
                     id={`tab-${i}`}

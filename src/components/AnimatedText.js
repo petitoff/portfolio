@@ -5,13 +5,13 @@ const Container = styled.div`
   position: relative;
 `;
 
-const AnimatedTextContainer = styled.h1`
+const AnimatedTextContainer = styled.h2`
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 1s, transform 1s;
 
-  ${(props) =>
-    props.isVisible &&
+  ${({ $isVisible }) =>
+    $isVisible &&
     css`
       opacity: 1;
       transform: translateY(0);
@@ -29,7 +29,7 @@ const AnimatedText = ({ children }) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               setIsVisible(true);
-              observer.disconnect(); // Przerywa obserwację po pierwszym wywołaniu
+              observer.disconnect();
             }
           });
         },
@@ -50,7 +50,7 @@ const AnimatedText = ({ children }) => {
 
   return (
     <Container ref={containerRef}>
-      <AnimatedTextContainer isVisible={isVisible}>
+      <AnimatedTextContainer $isVisible={isVisible}>
         {children}
       </AnimatedTextContainer>
     </Container>
