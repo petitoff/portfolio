@@ -93,8 +93,8 @@ const StyledImage = styled.div`
     width: 100%;
     height: 100%;
     z-index: 9999;
-    background-color: rgba(0, 0, 0, 0.2); /* Dodanie transparentnego tła */
-    mix-blend-mode: normal; /* Zmiana trybu mieszania kolorów */
+    background-color: rgba(0, 0, 0, 0.2);
+    mix-blend-mode: normal;
     display: flex;
     align-items: center;
     justify-content: center;
