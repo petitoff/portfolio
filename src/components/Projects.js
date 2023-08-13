@@ -8,7 +8,6 @@ import {
 } from "../styles/mixins";
 import AnimatedText from "./AnimatedText";
 import { graphql, useStaticQuery } from "gatsby";
-import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image";
 import AnimatedContainer from "./AnimatedContainer";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
