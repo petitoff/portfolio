@@ -178,7 +178,7 @@ const Projects = () => {
 
       {expandedImage && (
         <StyledImage className="expanded" onClick={handleCloseImage}>
-          <img src={expandedImage} alt="Expanded Image" />
+          <img src={expandedImage} alt="Expanded" />
         </StyledImage>
       )}
 
