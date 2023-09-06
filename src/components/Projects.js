@@ -150,7 +150,7 @@ const Projects = () => {
     query {
       projects: allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/content/projects/" } }
-        sort: { fields: frontmatter___date, order: ASC }
+        sort: { fields: frontmatter___date, order: DESC }
       ) {
         edges {
           node {
@@ -188,10 +188,10 @@ const Projects = () => {
             const { frontmatter, html } = node;
             const { title, external, github, tech, cover } = frontmatter;
 
-            const imageSrc = cover.publicURL;
+            const imageSrc = cover?.publicURL;
             let isGif = false;
 
-            if (imageSrc.endsWith(".gif")) {
+            if (imageSrc?.endsWith(".gif")) {
               isGif = true;
             }
 
@@ -199,7 +199,9 @@ const Projects = () => {
               <AnimatedContainer key={i}>
                 <StyledProject>
                   <StyledImage>
-                    {isGif ? (
+                    {!imageSrc ? (
+                      <></>
+                    ) : isGif ? (
                       <img
                         src={imageSrc}
                         alt={title}

@@ -79,8 +79,7 @@ const Hero = () => {
         <h2>Błażej Domagała</h2>
         <p>
           Skilled Frontend Developer specializing in React and React Native,
-          with proficiency in backend technologies and a passion for learning
-          and innovation.
+          with proficiency in backend technologies in Express and ASP.NET Core.
         </p>
 
         <AnimationContainer delay={0.6}>

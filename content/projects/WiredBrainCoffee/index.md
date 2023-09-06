@@ -1,5 +1,5 @@
 ---
-date: "3"
+date: "1"
 title: "WiredBrainCoffee"
 cover: "./demo.gif"
 github: "https://github.com/petitoff/WPF/tree/main/WiredBrainCoffe"
