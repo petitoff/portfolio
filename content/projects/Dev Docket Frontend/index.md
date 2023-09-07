@@ -3,7 +3,7 @@ date: "5"
 title: "Dev Docket"
 cover: "./demo.gif"
 github: "https://github.com/petitoff/dev-docket-frontend"
-external: "https://bookshelf-petitoff.vercel.app/books"
+external: "https://dev-docket.vercel.app/"
 tech:
   - TypeScript
   - Vite (React)
