@@ -20,7 +20,7 @@ const AboutMeSection = styled.section`
 const TechStackContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: space-between; */
+  justify-content: center;
   margin-top: 2rem;
   background-color: #1e1b4b;
   border-radius: 1rem;
