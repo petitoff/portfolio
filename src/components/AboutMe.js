@@ -40,13 +40,15 @@ const AboutMe = () => {
         <h2>About Me</h2>
         <p>
           Experienced <Higlight>Frontend Developer</Higlight> with a strong
-          background in React, React Native, JavaScript, and TypeScript, as well
-          as expertise in Redux Toolkit and React Router Doom.
+          background in JavaScript, and TypeScript and in framework React, React
+          Native, as well as expertise in Redux Toolkit and working with API in
+          frontend side.
         </p>
         <p>
-          Proficient in <Higlight>backend technologies</Higlight>, including C#,
-          .NET Framework, .NET MAUI, Java, and Java Spring Boot, with a focus on
-          creating efficient and scalable applications.
+          Proficient in creating RESTful APIs using{" "}
+          <Higlight>backend technologies</Higlight> such as Node.js, Express,
+          ASP.NET Core. I have also developed applications in .NET Framework
+          WPF, and .NET MAUI.
         </p>
         <p>
           Adept at <Higlight>quickly learning</Higlight> new technologies and

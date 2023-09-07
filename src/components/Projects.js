@@ -8,7 +8,6 @@ import {
 } from "../styles/mixins";
 import AnimatedText from "./AnimatedText";
 import { graphql, useStaticQuery } from "gatsby";
-import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image";
 import AnimatedContainer from "./AnimatedContainer";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
@@ -93,8 +92,8 @@ const StyledImage = styled.div`
     width: 100%;
     height: 100%;
     z-index: 9999;
-    background-color: rgba(0, 0, 0, 0.2); /* Dodanie transparentnego tła */
-    mix-blend-mode: normal; /* Zmiana trybu mieszania kolorów */
+    background-color: rgba(0, 0, 0, 0.2);
+    mix-blend-mode: normal;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -151,7 +150,7 @@ const Projects = () => {
     query {
       projects: allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/content/projects/" } }
-        sort: { fields: frontmatter___date, order: ASC }
+        sort: { fields: frontmatter___date, order: DESC }
       ) {
         edges {
           node {
@@ -179,7 +178,7 @@ const Projects = () => {
 
       {expandedImage && (
         <StyledImage className="expanded" onClick={handleCloseImage}>
-          <img src={expandedImage} alt="Expanded Image" />
+          <img src={expandedImage} alt="Expanded" />
         </StyledImage>
       )}
 
@@ -189,10 +188,10 @@ const Projects = () => {
             const { frontmatter, html } = node;
             const { title, external, github, tech, cover } = frontmatter;
 
-            const imageSrc = cover.publicURL;
+            const imageSrc = cover?.publicURL;
             let isGif = false;
 
-            if (imageSrc.endsWith(".gif")) {
+            if (imageSrc?.endsWith(".gif")) {
               isGif = true;
             }
 
@@ -200,7 +199,9 @@ const Projects = () => {
               <AnimatedContainer key={i}>
                 <StyledProject>
                   <StyledImage>
-                    {isGif ? (
+                    {!imageSrc ? (
+                      <></>
+                    ) : isGif ? (
                       <img
                         src={imageSrc}
                         alt={title}
