@@ -3,7 +3,7 @@ date: "2022-08-01"
 title: "Mobile Developer"
 company: "MyTaple"
 location: "Cupertino, CA"
-range: "October 2022 - February 2023"
+range: "Aug 2022 - Feb 2023"
 url: "https://www.apple.com/music/"
 github: ""
 ---
