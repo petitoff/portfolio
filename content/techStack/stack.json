@@ -9,6 +9,7 @@
         {"title": "Gatsby", "image": "./Gatsby_Logo.png"},
         {"title": "C#", "image": "./c-sharp.png"},
         {"title": ".NET Framework", "image": "./dot-net-framework.png"},
+        {"title": "ASP.NET core", "image": "./asp-net_core.png"},
         {"title": "WPF", "image": "./wpf.png"},
         {"title": ".NET MAUI", "image": "./dotnet-maui.png"},
         {"title": "java", "image": "./java.png"},
