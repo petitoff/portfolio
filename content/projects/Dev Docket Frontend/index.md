@@ -1,7 +1,7 @@
 ---
 date: "5"
 title: "Dev Docket"
-cover: "./demo.gif"
+# cover: "./demo.gif"
 github: "https://github.com/petitoff/dev-docket-frontend"
 external: "https://dev-docket.vercel.app/"
 tech:
