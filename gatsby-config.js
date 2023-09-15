@@ -30,5 +30,18 @@ module.exports = {
         path: `${__dirname}/content/techStack`,
       },
     },
+    {
+      resolve: "gatsby-plugin-google-gtag",
+      options: {
+        trackingIds: ["G-8P6JR1B39B"],
+        gtagConfig: {
+          anonymize_ip: true,
+          cookie_expires: 0,
+        },
+        pluginConfig: {
+          head: false,
+        },
+      },
+    },
   ],
 };

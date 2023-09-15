@@ -16,6 +16,7 @@
     "babel-plugin-lodash": "^3.3.4",
     "babel-plugin-styled-components": "^2.1.4",
     "gatsby": "^5.11.0",
+    "gatsby-plugin-google-gtag": "^5.12.0",
     "gatsby-plugin-image": "^3.11.0",
     "gatsby-plugin-react-helmet": "^6.11.0",
     "gatsby-plugin-sharp": "^5.11.0",
