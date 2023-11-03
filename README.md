@@ -1,30 +1,29 @@
-[![Watch tutorial here](https://img.youtube.com/vi/sUKptmUVIBM/0.jpg)](https://youtu.be/sUKptmUVIBM)
+# Welcome to my GitHub repository!
 
-# [Watch video here](https://youtu.be/sUKptmUVIBM)
+I'm Błażej Domagała, an experienced Frontend Developer specializing in React and React Native. I also have proficiency in backend technologies and a passion for learning and innovation.
 
-## What you will learn
+## Portfolio
 
-- Latest Next.js 13 features
-- Next.js App Router
-- Next.js Server Actions
-- Client & Server Components
-- TypeScript (Beginner & Intermediate)
-- Tailwind CSS
-- Context API
-- Advanced Animations with Framer Motion
-- React.Email & Resend
-- Custom React hooks
-- Fresh, modern UI design
-- Light & Dark mode
-- Responsive website
+I invite you to take a look at my portfolio where I showcase my experience, skills, and the projects I've worked on.
 
-## Important
+[Visit my portfolio](https://petitoff.vercel.app/)
 
-If you want to be a professional developer, you have to know the fundamentals like JavaScript and CSS really well. I highly recommend you go through my [Professional JavaScript](https://bytegrad.com/courses/professional-javascript) and [Professional CSS](https://bytegrad.com/courses/professional-css) courses.
+### Tech stack
+- javascript
+- gatsby
+- GraphQL
+- styled components
 
-I'm close to releasing a complete React & Next.js course. Get on the email list to receive early-bird pricing: [link](https://email.bytegrad.com/).
+## Experience
 
-## Setup
+I have a strong background in working with React, React Native, JavaScript, and TypeScript, along with expertise in Redux Toolkit and React Router Doom. I'm proficient in backend technologies including C#, .NET Framework, Java, and Java Spring Boot, focusing on creating efficient and scalable applications.
 
-1. Add RESEND_API_KEY environment variable in .env.local
-2. In the send-email.ts action file, change the "to" email to your own email
+## Projects
+
+You can find detailed information about the projects I've worked on in my portfolio, including the "Bookshelf" app, a modern web application built using ReactJS, TypeScript, Firebase, Redux Toolkit, and React Router DOM.
+
+## Contact
+
+If you have any questions or would like to discuss potential collaboration, please reach out to me through my portfolio.
+
+Thank you for visiting my repository!
