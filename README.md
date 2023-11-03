@@ -9,10 +9,9 @@ I invite you to take a look at my portfolio where I showcase my experience, skil
 [Visit my portfolio](https://petitoff.vercel.app/)
 
 ### Tech stack
-- javascript
-- gatsby
-- GraphQL
-- styled components
+- TypeScript
+- Next.js
+- Tailwind CSS
 
 ## Experience
 
