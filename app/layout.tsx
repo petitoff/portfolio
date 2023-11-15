@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Błażej Domagała | portfolio",
-  description: "Błażej is a full-stack developer with 1 year of experience.",
+  description: "Błażej is a junior developer with 1 year of experience.",
 };
 
 export default function RootLayout({
