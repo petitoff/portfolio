@@ -3,6 +3,7 @@ import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 import devdocketImg from "@/public/devdocket.png";
+import bookshelfImg from "@/public/bookshelf.png";
 import rmtdevImg from "@/public/rmtdev.png";
 import wordanalyticsImg from "@/public/wordanalytics.png";
 
@@ -64,10 +65,32 @@ export const projectsData = [
   {
     title: "Dev Docket",
     description:
-      "I created full-stack application to manage projects. App have a lot o feature for managing projects and teams.",
-    tags: ["React & Vite", "Nestjs", "Postgresql", "Tailwind", "REST API"],
+      "I created full-stack application to manage projects and teams. It provides comprehensive task and project management, progress tracking, collaboration, access control, issue tracking, and accessibility through web browsers.",
+    tags: [
+      "React & Vite",
+      "RTK",
+      "React Router DOM",
+      "Nestjs",
+      "Postgresql",
+      "Tailwind",
+      "Sequelize",
+    ],
     imageUrl: devdocketImg,
-    link: "https://dev-docket.vercel.app",
+    link: {
+      live: "https://dev-docket.vercel.app",
+      source: "https://github.com/dev-docket",
+    },
+  },
+  {
+    title: "Bookshelf",
+    description:
+      "Bookshelf is a modern web application built using ReactJS with TypeScript, Firebase, Redux Toolkit, and React Router DOM. The website allows users to browse, read, and rate books online, as well as create reading lists and share books with friends.",
+    tags: ["React", "React Router DOM", "Firebase", "SCSS", "RTK"],
+    imageUrl: bookshelfImg,
+    link: {
+      live: "https://bookshelf-petitoff.vercel.app/books",
+      source: "https://github.com/petitoff/bookshelf",
+    },
   },
 ] as const;
 
