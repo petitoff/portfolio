@@ -22,7 +22,12 @@ export default function Project({
   const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
   const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
 
-  const handleOpenLinkNewTab = (link: string) => {
+  const handleOpenLinkNewTab = (
+    link: string,
+    e?: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    e?.stopPropagation();
+    e?.preventDefault();
     window.open(link, "_blank");
   };
 
@@ -55,23 +60,25 @@ export default function Project({
             ))}
           </ul>
           <div className="mt-2">
-            <a
-              href={link.live}
-              target="_blank"
+            <button
+              // href={link.live}
+              // target="_blank"
+              onClick={(e) => handleOpenLinkNewTab(link.live, e)}
               rel="noreferrer"
               className="mt-4 inline-block text-lg font-semibold text-blue-600 hover:underline"
             >
               Live
-            </a>
+            </button>
             <span className="ml-2 opacity-30">|</span>
-            <a
-              href={link.source}
-              target="_blank"
+            <button
+              // href={link.source}
+              // target="_blank"
+              onClick={(e) => handleOpenLinkNewTab(link.source, e)}
               rel="noreferrer"
               className="ml-2 inline-block text-lg font-semibold text-blue-600 hover:underline"
             >
               Source
-            </a>
+            </button>
           </div>
         </div>
 
