@@ -61,8 +61,6 @@ export default function Project({
           </ul>
           <div className="mt-2">
             <button
-              // href={link.live}
-              // target="_blank"
               onClick={(e) => handleOpenLinkNewTab(link.live, e)}
               rel="noreferrer"
               className="mt-4 inline-block text-lg font-semibold text-blue-600 hover:underline"
@@ -71,8 +69,6 @@ export default function Project({
             </button>
             <span className="ml-2 opacity-30">|</span>
             <button
-              // href={link.source}
-              // target="_blank"
               onClick={(e) => handleOpenLinkNewTab(link.source, e)}
               rel="noreferrer"
               className="ml-2 inline-block text-lg font-semibold text-blue-600 hover:underline"
