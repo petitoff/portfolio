@@ -106,7 +106,7 @@ export const projectsData: IProject[] = [
       source: "https://github.com/petitoff/RoboticPaintingSimulator",
     },
   },
-] as const;
+];
 
 interface IProject {
   title: string;
