@@ -6,6 +6,7 @@ import devdocketImg from "@/public/devdocket.png";
 import bookshelfImg from "@/public/bookshelf.png";
 import rmtdevImg from "@/public/rmtdev.png";
 import wordanalyticsImg from "@/public/wordanalytics.png";
+import { StaticImageData } from "next/image";
 
 export const links = [
   {
@@ -61,7 +62,7 @@ export const experiencesData = [
   },
 ] as const;
 
-export const projectsData = [
+export const projectsData: IProject[] = [
   {
     title: "Dev Docket",
     description:
@@ -75,7 +76,8 @@ export const projectsData = [
       "Tailwind",
       "Sequelize",
     ],
-    imageUrl: devdocketImg,
+    mediaUrl: "/devdocket.png",
+    mediaType: "image",
     link: {
       live: "https://dev-docket.vercel.app",
       source: "https://github.com/dev-docket",
@@ -86,13 +88,37 @@ export const projectsData = [
     description:
       "Bookshelf is a modern web application built using ReactJS with TypeScript, Firebase, Redux Toolkit, and React Router DOM. The website allows users to browse, read, and rate books online, as well as create reading lists and share books with friends.",
     tags: ["React", "React Router DOM", "Firebase", "SCSS", "RTK"],
-    imageUrl: bookshelfImg,
+    mediaUrl: "/bookshelf.png",
+    mediaType: "image",
     link: {
       live: "https://bookshelf-petitoff.vercel.app/books",
       source: "https://github.com/petitoff/bookshelf",
     },
   },
-] as const;
+  {
+    title: "Robotic Painting Simulator",
+    description:
+      "I created a robotic painting simulator in WPF. It was a project for senior interview. The application allows you to create a painting and then simulate the painting process. I used C# and .NET Framework. I also used the MVVM pattern, implemented the INotifyPropertyChanged interface, and used the ICommand interface and implemented dependency injection. ",
+    tags: ["C#", ".NET Framework", "WPF"],
+    mediaUrl: "/RoboticPaintingSimulator.mp4",
+    mediaType: "video",
+    link: {
+      source: "https://github.com/petitoff/RoboticPaintingSimulator",
+    },
+  },
+];
+
+interface IProject {
+  title: string;
+  description: string;
+  tags: string[];
+  mediaUrl: string;
+  mediaType: "image" | "video";
+  link: {
+    live?: string;
+    source: string;
+  };
+}
 
 export const skillsData = [
   "HTML",
