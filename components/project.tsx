@@ -33,18 +33,18 @@ export default function Project({
           quality={95}
           width={500}
           height={300}
-          className="absolute -right-40 top-10 w-[28rem] rounded-t-lg shadow-2xl transition
-                    group-even:-left-36
+          className="absolute -right-40 top-10 w-[28rem] rounded-t-lg shadow-2xl transition group-even:-left-36
                     group-even:right-[initial]
                     group-hover:-translate-x-3
                     group-hover:translate-y-3
                     group-hover:-rotate-2
-                    
                     group-hover:scale-[1.04]
+                    
                     group-even:group-hover:translate-x-3
                     group-even:group-hover:translate-y-3
+                    group-even:group-hover:rotate-2
 
-                    group-even:group-hover:rotate-2 sm:block"
+                    max-md:hidden sm:block"
         />
       );
     } else if (mediaType === "video") {
@@ -53,12 +53,14 @@ export default function Project({
           src={mediaUrl}
           title={`Project: ${title}`}
           controls
+          preload="none"
           // Apply similar dimensions for video
           className="absolute right-0 top-0 w-[28rem] rounded-t-lg shadow-2xl transition
           group-even:-left-0
           group-even:right-[initial]
           group-hover:-translate-x-3
-          group-hover:translate-y-3"
+          group-hover:translate-y-3
+          max-xl:hidden lg:block"
         />
       );
     }
