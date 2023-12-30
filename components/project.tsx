@@ -29,6 +29,7 @@ export default function Project({
         <Image
           src={mediaUrl}
           alt={`Project: ${title}`}
+          priority
           quality={95}
           width={500}
           height={300}
@@ -124,9 +125,9 @@ export default function Project({
           </div>
         </div>
 
-        <div className="absolute left-0 top-0 z-0 h-full w-full">
-          {renderMedia()}
-        </div>
+        {/* <div className="absolute left-0 top-0 z-0 h-full w-full"> */}
+        {renderMedia()}
+        {/* </div> */}
       </section>
     </motion.div>
   );
