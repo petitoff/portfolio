@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { projectsData } from "@/lib/data";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 type ProjectProps = (typeof projectsData)[number];
 
@@ -22,6 +23,7 @@ export default function Project({
   });
   const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
   const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+  const router = useRouter();
 
   const renderMedia = () => {
     if (mediaType === "image") {
@@ -75,6 +77,13 @@ export default function Project({
     window.open(link, "_blank");
   };
 
+  const handleRedirectProject = (
+    e: React.MouseEvent<HTMLDivElement, MouseEvent>,
+  ) => {
+    e.stopPropagation();
+    router.push(`/projects?id=${title}`);
+  };
+
   return (
     <motion.div
       ref={ref}
@@ -85,7 +94,7 @@ export default function Project({
       className="group relative mb-3 last:mb-0 sm:mb-8"
     >
       <section
-        onClick={() => handleOpenLinkNewTab(link.live)}
+        onClick={handleRedirectProject}
         className="relative max-w-[59rem] overflow-hidden rounded-lg border border-black/5 bg-gray-100 transition hover:cursor-pointer hover:bg-gray-200 dark:bg-white/10 dark:text-white dark:hover:bg-white/20 sm:h-fit sm:pr-8 sm:group-even:pl-8"
       >
         <div className="z-10 flex h-full flex-col px-5 pb-7 pt-4 sm:max-w-[50%] sm:pl-10 sm:pr-2 sm:pt-10 sm:group-even:ml-[18rem]">
