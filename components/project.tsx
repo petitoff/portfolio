@@ -4,6 +4,8 @@ import { useRef } from "react";
 import { projectsData } from "@/lib/data";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { MotionStyle } from "framer-motion"; // Or the appropriate import path
+
 import { useRouter } from "next/navigation";
 import { openLinkInNewTab } from "@/utils/openLinkInNewTab";
 
@@ -23,7 +25,7 @@ export default function Project({
     offset: ["0 1", "1.33 1"],
   });
   const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-  const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+  // const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
   const router = useRouter();
 
   const renderMedia = () => {
@@ -58,12 +60,8 @@ export default function Project({
           controls
           preload="none"
           // Apply similar dimensions for video
-          className="absolute right-0 top-0 w-[28rem] rounded-t-lg shadow-2xl transition
-          group-even:-left-0
-          group-even:right-[initial]
-          group-hover:-translate-x-3
-          group-hover:translate-y-3
-          max-xl:hidden lg:block"
+          className="absolute right-0 top-0 w-[28rem] rounded-t-lg shadow-2xl 
+                    max-lg:hidden lg:block"
         />
       );
     }
@@ -81,8 +79,10 @@ export default function Project({
       ref={ref}
       style={{
         scale: scaleProgess,
-        opacity: opacityProgess,
       }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
       className="group relative mb-3 last:mb-0 sm:mb-8"
     >
       <section
