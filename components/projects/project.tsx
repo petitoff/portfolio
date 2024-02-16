@@ -15,15 +15,6 @@ export default function Project() {
 
   const [project, setProject] = useState<IProject>();
 
-  // Użyj wartości id do pobierania lub renderowania danych dla danego projektu
-  // Na przykład, możesz użyć fetch lub axios, aby wysłać żądanie do API
-  // lub użyć getStaticProps lub getServerSideProps, aby wygenerować stronę statyczną lub serwerową
-  // Tutaj używamy przykładowych danych, aby pokazać, jak wyświetlić tytuł i opis projektu
-  //   const project = {
-  //     title: `Projekt ${id}`,
-  //     description: `To jest opis projektu ${id}`,
-  //   };
-
   useEffect(() => {
     const handleGetProject = () => {
       const project = projectsData.find((project) => project.title === id);
