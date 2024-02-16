@@ -8,6 +8,7 @@ import { MotionStyle } from "framer-motion"; // Or the appropriate import path
 
 import { useRouter } from "next/navigation";
 import { openLinkInNewTab } from "@/utils/openLinkInNewTab";
+import Link from "next/link";
 
 type ProjectProps = (typeof projectsData)[number];
 
@@ -89,42 +90,56 @@ export default function Project({
         onClick={handleRedirectProject}
         className="relative max-w-[59rem] overflow-hidden rounded-lg border border-black/5 bg-gray-100 transition hover:cursor-pointer hover:bg-gray-200 dark:bg-white/10 dark:text-white dark:hover:bg-white/20 sm:h-fit sm:pr-8 sm:group-even:pl-8"
       >
-        <div className="z-10 flex h-full flex-col px-5 pb-7 pt-4 sm:max-w-[50%] sm:pl-10 sm:pr-2 sm:pt-10 sm:group-even:ml-[18rem]">
-          <h3 className="text-2xl font-semibold">{title}</h3>
-          <p className="mb-4 mt-2 leading-relaxed text-gray-700 dark:text-white/70">
-            {description}
-          </p>
-          <ul className="mt-4 flex flex-wrap gap-2 sm:mt-auto">
-            {tags.map((tag, index) => (
-              <li
-                className="rounded-full bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white dark:text-white/70"
-                key={index}
-              >
-                {tag}
-              </li>
-            ))}
-          </ul>
-          <div className="mt-2">
-            {link.live && (
-              <>
-                <button
-                  onClick={(e) => openLinkInNewTab(link.live, e)}
-                  rel="noreferrer"
-                  className="mt-4 inline-block text-lg font-semibold text-blue-600 hover:underline"
+        <div className="sm:pl-10 sm:pr-2 sm:pt-10 sm:group-even:ml-[18rem]">
+          <div className="z-10 flex h-full flex-col pb-2 pt-4 sm:max-w-[50%]">
+            <h3 className="text-2xl font-semibold">{title}</h3>
+            <p className="mb-4 mt-2 leading-relaxed text-gray-700 dark:text-white/70">
+              {description}
+            </p>
+            <ul className="mt-4 flex flex-wrap gap-2 sm:mt-auto">
+              {tags.map((tag, index) => (
+                <li
+                  className="rounded-full bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white dark:text-white/70"
+                  key={index}
                 >
-                  Live
-                </button>
-                <span className="ml-2 opacity-30">|</span>
-              </>
-            )}
+                  {tag}
+                </li>
+              ))}
+            </ul>
+          </div>
 
-            <button
-              onClick={(e) => openLinkInNewTab(link.source, e)}
-              rel="noreferrer"
-              className="ml-2 inline-block text-lg font-semibold text-blue-600 hover:underline"
-            >
-              Source
-            </button>
+          <div className="flex items-center justify-between pb-6">
+            <div className="mt-2">
+              {link.live && (
+                <>
+                  <button
+                    onClick={(e) => openLinkInNewTab(link.live, e)}
+                    rel="noreferrer"
+                    className="mt-4 inline-block text-lg font-semibold text-blue-600 hover:underline"
+                  >
+                    Live
+                  </button>
+                  <span className="ml-2 opacity-30">|</span>
+                </>
+              )}
+
+              <button
+                onClick={(e) => openLinkInNewTab(link.source, e)}
+                rel="noreferrer"
+                className="ml-2 inline-block text-lg font-semibold text-blue-600 hover:underline"
+              >
+                Source
+              </button>
+            </div>
+
+            <div>
+              <Link
+                className="rounded-md border-2 px-4 py-2"
+                href={`/projects?id=${title}`}
+              >
+                See details
+              </Link>
+            </div>
           </div>
         </div>
 
