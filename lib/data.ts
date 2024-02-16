@@ -66,7 +66,7 @@ export const projectsData: IProject[] = [
   {
     title: "Dev Docket",
     description:
-      "I created full-stack application to manage projects and teams. It provides comprehensive task and project management, progress tracking, collaboration, access control, issue tracking, and accessibility through web browsers.",
+      "I created Dev Docket, an application for managing projects and teams, which provides comprehensive task and project management, progress tracking, collaboration, access control, issue tracking, and availability through web browsers. I implemented Kanban Board to clearly present tasks. Each task contains a description that supports markdown, adding links and embedding images using links.",
     tags: [
       "React & Vite",
       "TypeScript",
@@ -99,7 +99,7 @@ export const projectsData: IProject[] = [
   {
     title: "Robotic Painting Simulator",
     description:
-      "I created a robotic painting simulator in WPF. It was a project for senior interview. The application allows you to create a painting and then simulate the painting process. I used C# and .NET Framework. I also used the MVVM pattern, implemented the INotifyPropertyChanged interface, and used the ICommand interface and implemented dependency injection. ",
+      "I created a robotic painting simulator in WPF. It was a project for senior interview. The application allows you to create a painting and then simulate the painting process. I used C# and .NET Framework. I also used the MVVM pattern, implemented the INotifyPropertyChanged interface, and used the ICommand interface and implemented dependency injection.",
     tags: ["C#", ".NET Framework", "WPF"],
     mediaUrl: "/RoboticPaintingSimulator.mp4",
     mediaType: "video",
