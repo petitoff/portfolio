@@ -5,6 +5,7 @@ import { projectsData } from "@/lib/data";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRouter } from "next/navigation";
+import { openLinkInNewTab } from "@/utils/openLinkInNewTab";
 
 type ProjectProps = (typeof projectsData)[number];
 
@@ -68,15 +69,6 @@ export default function Project({
     }
   };
 
-  const handleOpenLinkNewTab = (
-    link?: string,
-    e?: React.MouseEvent<HTMLButtonElement, MouseEvent>,
-  ) => {
-    e?.stopPropagation();
-    e?.preventDefault();
-    window.open(link, "_blank");
-  };
-
   const handleRedirectProject = (
     e: React.MouseEvent<HTMLDivElement, MouseEvent>,
   ) => {
@@ -116,7 +108,7 @@ export default function Project({
             {link.live && (
               <>
                 <button
-                  onClick={(e) => handleOpenLinkNewTab(link.live, e)}
+                  onClick={(e) => openLinkInNewTab(link.live, e)}
                   rel="noreferrer"
                   className="mt-4 inline-block text-lg font-semibold text-blue-600 hover:underline"
                 >
@@ -127,7 +119,7 @@ export default function Project({
             )}
 
             <button
-              onClick={(e) => handleOpenLinkNewTab(link.source, e)}
+              onClick={(e) => openLinkInNewTab(link.source, e)}
               rel="noreferrer"
               className="ml-2 inline-block text-lg font-semibold text-blue-600 hover:underline"
             >

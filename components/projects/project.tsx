@@ -4,6 +4,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import { IProject, projectsData } from "@/lib/data";
 import { useEffect, useState } from "react";
+import { openLinkInNewTab } from "@/utils/openLinkInNewTab";
 
 export default function Project() {
   const router = useRouter();
@@ -62,9 +63,17 @@ export default function Project() {
       </motion.div>
 
       <div className="mt-5 flex justify-center gap-3">
-        <button className="h-10 w-16 rounded-md bg-indigo-600">Live</button>
-        <button className="h-10 w-16 rounded-md border-2 border-indigo-600">
-          Demo
+        <button
+          onClick={(e) => openLinkInNewTab(project?.link.live, e)}
+          className="h-10 w-16 rounded-md bg-indigo-600"
+        >
+          Live
+        </button>
+        <button
+          onClick={(e) => openLinkInNewTab(project?.link.source, e)}
+          className="h-10 w-20 rounded-md border-2 border-indigo-600"
+        >
+          Source
         </button>
       </div>
     </section>
