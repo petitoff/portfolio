@@ -109,13 +109,13 @@ export default function Project({
           </div>
 
           <div className="flex items-center justify-between pb-6">
-            <div className="mt-2">
+            <div className="mt-2 flex items-center">
               {link.live && (
                 <>
                   <button
                     onClick={(e) => openLinkInNewTab(link.live, e)}
                     rel="noreferrer"
-                    className="mt-4 inline-block text-lg font-semibold text-blue-600 hover:underline"
+                    className="inline-block text-lg font-semibold text-blue-600 hover:underline"
                   >
                     Live
                   </button>
