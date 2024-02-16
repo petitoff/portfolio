@@ -22,12 +22,12 @@ export const links = [
     hash: "#projects",
   },
   {
-    name: "Skills",
-    hash: "#skills",
-  },
-  {
     name: "Experience",
     hash: "#experience",
+  },
+  {
+    name: "Skills",
+    hash: "#skills",
   },
   // {
   //   name: "Contact",
@@ -109,7 +109,7 @@ export const projectsData: IProject[] = [
   },
 ];
 
-interface IProject {
+export interface IProject {
   title: string;
   description: string;
   tags: string[];

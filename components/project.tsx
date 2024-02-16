@@ -4,6 +4,11 @@ import { useRef } from "react";
 import { projectsData } from "@/lib/data";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { MotionStyle } from "framer-motion"; // Or the appropriate import path
+
+import { useRouter } from "next/navigation";
+import { openLinkInNewTab } from "@/utils/openLinkInNewTab";
+import Link from "next/link";
 
 type ProjectProps = (typeof projectsData)[number];
 
@@ -21,7 +26,8 @@ export default function Project({
     offset: ["0 1", "1.33 1"],
   });
   const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-  const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+  // const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+  const router = useRouter();
 
   const renderMedia = () => {
     if (mediaType === "image") {
@@ -55,24 +61,18 @@ export default function Project({
           controls
           preload="none"
           // Apply similar dimensions for video
-          className="absolute right-0 top-0 w-[28rem] rounded-t-lg shadow-2xl transition
-          group-even:-left-0
-          group-even:right-[initial]
-          group-hover:-translate-x-3
-          group-hover:translate-y-3
-          max-xl:hidden lg:block"
+          className="absolute right-0 top-0 w-[28rem] rounded-t-lg shadow-2xl 
+                    max-lg:hidden lg:block"
         />
       );
     }
   };
 
-  const handleOpenLinkNewTab = (
-    link?: string,
-    e?: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+  const handleRedirectProject = (
+    e: React.MouseEvent<HTMLDivElement, MouseEvent>,
   ) => {
-    e?.stopPropagation();
-    e?.preventDefault();
-    window.open(link, "_blank");
+    e.stopPropagation();
+    router.push(`/projects?id=${title}`);
   };
 
   return (
@@ -80,50 +80,66 @@ export default function Project({
       ref={ref}
       style={{
         scale: scaleProgess,
-        opacity: opacityProgess,
       }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
       className="group relative mb-3 last:mb-0 sm:mb-8"
     >
       <section
-        onClick={() => handleOpenLinkNewTab(link.live)}
+        onClick={handleRedirectProject}
         className="relative max-w-[59rem] overflow-hidden rounded-lg border border-black/5 bg-gray-100 transition hover:cursor-pointer hover:bg-gray-200 dark:bg-white/10 dark:text-white dark:hover:bg-white/20 sm:h-fit sm:pr-8 sm:group-even:pl-8"
       >
-        <div className="z-10 flex h-full flex-col px-5 pb-7 pt-4 sm:max-w-[50%] sm:pl-10 sm:pr-2 sm:pt-10 sm:group-even:ml-[18rem]">
-          <h3 className="text-2xl font-semibold">{title}</h3>
-          <p className="mb-4 mt-2 leading-relaxed text-gray-700 dark:text-white/70">
-            {description}
-          </p>
-          <ul className="mt-4 flex flex-wrap gap-2 sm:mt-auto">
-            {tags.map((tag, index) => (
-              <li
-                className="rounded-full bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white dark:text-white/70"
-                key={index}
-              >
-                {tag}
-              </li>
-            ))}
-          </ul>
-          <div className="mt-2">
-            {link.live && (
-              <>
-                <button
-                  onClick={(e) => handleOpenLinkNewTab(link.live, e)}
-                  rel="noreferrer"
-                  className="mt-4 inline-block text-lg font-semibold text-blue-600 hover:underline"
+        <div className="sm:pl-10 sm:pr-2 sm:pt-10 sm:group-even:ml-[18rem]">
+          <div className="z-10 flex h-full flex-col pb-2 pt-4 sm:max-w-[50%]">
+            <h3 className="text-2xl font-semibold">{title}</h3>
+            <p className="mb-4 mt-2 leading-relaxed text-gray-700 dark:text-white/70">
+              {description}
+            </p>
+            <ul className="mt-4 flex flex-wrap gap-2 sm:mt-auto">
+              {tags.map((tag, index) => (
+                <li
+                  className="rounded-full bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white dark:text-white/70"
+                  key={index}
                 >
-                  Live
-                </button>
-                <span className="ml-2 opacity-30">|</span>
-              </>
-            )}
+                  {tag}
+                </li>
+              ))}
+            </ul>
+          </div>
 
-            <button
-              onClick={(e) => handleOpenLinkNewTab(link.source, e)}
-              rel="noreferrer"
-              className="ml-2 inline-block text-lg font-semibold text-blue-600 hover:underline"
-            >
-              Source
-            </button>
+          <div className="flex items-center justify-between pb-6">
+            <div className="mt-2 flex items-center">
+              {link.live && (
+                <>
+                  <button
+                    onClick={(e) => openLinkInNewTab(link.live, e)}
+                    rel="noreferrer"
+                    className="inline-block text-lg font-semibold text-blue-600 hover:underline"
+                  >
+                    Live
+                  </button>
+                  <span className="ml-2 opacity-30">|</span>
+                </>
+              )}
+
+              <button
+                onClick={(e) => openLinkInNewTab(link.source, e)}
+                rel="noreferrer"
+                className="ml-2 inline-block text-lg font-semibold text-blue-600 hover:underline"
+              >
+                Source
+              </button>
+            </div>
+
+            <div>
+              <Link
+                className="rounded-md border-2 px-4 py-2"
+                href={`/projects?id=${title}`}
+              >
+                See details
+              </Link>
+            </div>
           </div>
         </div>
 
