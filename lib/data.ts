@@ -69,6 +69,7 @@ export const projectsData: IProject[] = [
       "I created full-stack application to manage projects and teams. It provides comprehensive task and project management, progress tracking, collaboration, access control, issue tracking, and accessibility through web browsers.",
     tags: [
       "React & Vite",
+      "TypeScript",
       "RTK",
       "React Router DOM",
       "Nestjs",
