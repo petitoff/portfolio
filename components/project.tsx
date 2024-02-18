@@ -25,7 +25,7 @@ export default function Project({
     target: ref,
     offset: ["0 1", "1.33 1"],
   });
-  const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
   // const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
   const router = useRouter();
 
@@ -79,7 +79,7 @@ export default function Project({
     <motion.div
       ref={ref}
       style={{
-        scale: scaleProgess,
+        scale: scaleProgress,
       }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
