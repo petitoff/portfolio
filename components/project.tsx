@@ -1,10 +1,7 @@
-"use client";
-
 import { useRef } from "react";
 import { projectsData } from "@/lib/data";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { MotionStyle } from "framer-motion"; // Or the appropriate import path
 
 import { useRouter } from "next/navigation";
 import { openLinkInNewTab } from "@/utils/openLinkInNewTab";
