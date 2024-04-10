@@ -85,7 +85,7 @@ export default function Project({
     >
       <section
         onClick={handleRedirectProject}
-        className="relative max-w-[59rem] overflow-hidden rounded-lg border border-black/5 bg-gray-100 transition hover:cursor-pointer hover:bg-gray-200 dark:bg-white/10 dark:text-white dark:hover:bg-white/20 sm:h-fit sm:pr-8 sm:group-even:pl-8"
+        className="relative max-w-[59rem] overflow-hidden rounded-lg border border-black/5 bg-gray-100 transition hover:cursor-pointer hover:bg-gray-200 dark:bg-white/10 dark:text-white dark:hover:bg-white/20 max-sm:p-4 sm:h-fit sm:pr-8 sm:group-even:pl-8"
       >
         <div className="sm:pl-10 sm:pr-2 sm:pt-10 sm:group-even:ml-[18rem]">
           <div className="z-10 flex h-full flex-col pb-2 pt-4 sm:max-w-[50%]">
@@ -105,7 +105,7 @@ export default function Project({
             </ul>
           </div>
 
-          <div className="flex items-center justify-between pb-6">
+          <div className="flex items-center justify-between max-sm:pt-4 sm:pb-4">
             <div className="mt-2 flex items-center">
               {link.live && (
                 <>
