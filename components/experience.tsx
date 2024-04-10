@@ -1,6 +1,4 @@
-"use client";
-
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import SectionHeading from "./section-heading";
 import {
   VerticalTimeline,
@@ -10,14 +8,16 @@ import "react-vertical-timeline-component/style.min.css";
 import { experiencesData } from "@/lib/data";
 import { useTheme } from "@/context/theme-context";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { useSectionInView } from "@/lib/hooks";
 
 export default function Experience() {
   const { theme } = useTheme();
 
-  const ref = useRef<HTMLDivElement>(null);
+  const { ref } = useSectionInView("Experience", 0.8);
+  const htmlDivElement = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
-    target: ref,
+    target: htmlDivElement,
     offset: ["0 1", "1.33 1"],
   });
 
