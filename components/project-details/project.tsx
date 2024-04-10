@@ -66,13 +66,14 @@ export default function Project() {
       <div className="mt-5 flex justify-center gap-3">
         <button
           onClick={(e) => openLinkInNewTab(project?.link.live, e)}
-          className="h-10 w-16 rounded-md bg-indigo-600 text-white"
+          className="h-10 w-16 rounded-md bg-indigo-600 text-white transition-colors hover:bg-white hover:text-indigo-600"
         >
           Live
         </button>
+
         <button
           onClick={(e) => openLinkInNewTab(project?.link.source, e)}
-          className="h-10 w-20 rounded-md border-2 border-indigo-600"
+          className="h-10 w-20 rounded-md border-2 border-indigo-600 transition-colors hover:bg-indigo-600 hover:text-white"
         >
           Source
         </button>
