@@ -1,4 +1,4 @@
-import Project from "@/components/projects/project";
+import Project from "@/components/project-details/project";
 import { Suspense } from "react";
 
 export default function Page() {
