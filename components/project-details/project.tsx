@@ -5,11 +5,12 @@ import { motion } from "framer-motion";
 import { IProject, projectsData } from "@/lib/data";
 import { useEffect, useState } from "react";
 import { openLinkInNewTab } from "@/utils/openLinkInNewTab";
+import { useTheme } from "@/context/theme-context";
 
 export default function Project() {
   const router = useRouter();
-  // Użyj hooka useSearchParams, aby uzyskać dostęp do obiektu searchParams
   const searchParams = useSearchParams();
+  const { theme } = useTheme();
 
   // Pobierz wartość query parameter o kluczu id
   const id = searchParams.get("id");
@@ -44,7 +45,7 @@ export default function Project() {
           viewBox="0 0 24 24"
         >
           <path
-            fill="#ffffff"
+            fill={theme === "light" ? "black" : "white"}
             d="m10 18l-6-6l6-6l1.4 1.45L7.85 11H20v2H7.85l3.55 3.55z"
           />
         </svg>
@@ -65,13 +66,14 @@ export default function Project() {
       <div className="mt-5 flex justify-center gap-3">
         <button
           onClick={(e) => openLinkInNewTab(project?.link.live, e)}
-          className="h-10 w-16 rounded-md bg-indigo-600"
+          className="h-10 w-16 rounded-md bg-indigo-600 text-white transition-colors hover:bg-white hover:text-indigo-600"
         >
           Live
         </button>
+
         <button
           onClick={(e) => openLinkInNewTab(project?.link.source, e)}
-          className="h-10 w-20 rounded-md border-2 border-indigo-600"
+          className="h-10 w-20 rounded-md border-2 border-indigo-600 transition-colors hover:bg-indigo-600 hover:text-white"
         >
           Source
         </button>

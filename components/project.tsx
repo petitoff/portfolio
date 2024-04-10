@@ -6,6 +6,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { openLinkInNewTab } from "@/utils/openLinkInNewTab";
 import Link from "next/link";
+import { useTheme } from "@/context/theme-context";
 
 type ProjectProps = (typeof projectsData)[number];
 
@@ -25,6 +26,7 @@ export default function Project({
   const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
   // const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
   const router = useRouter();
+  const { theme } = useTheme();
 
   const renderMedia = () => {
     if (mediaType === "image") {
@@ -129,9 +131,9 @@ export default function Project({
               </button>
             </div>
 
-            <div>
+            <div className="">
               <Link
-                className="rounded-md border-2 px-4 py-2"
+                className={`rounded-md border-2 ${theme === "dark" ? "border-white" : "border-black"} px-4 py-2 hover:border-indigo-600`}
                 href={`/projects?id=${title}`}
               >
                 See details
