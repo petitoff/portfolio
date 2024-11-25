@@ -10,7 +10,7 @@ const About = () => {
 
   const fadeInAnimationVariants = {
     initial: { opacity: 0, y: 100 },
-    animate: (index) => ({
+    animate: (index: number) => ({
       opacity: 1,
       y: 0,
       transition: {

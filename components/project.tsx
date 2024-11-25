@@ -11,7 +11,7 @@ import { Icon } from "@iconify/react";
 
 type ProjectProps = (typeof projectsData)[number];
 
-const Project = ({
+const Project: React.FC<ProjectProps> = ({
   title,
   description,
   tags,

@@ -7,7 +7,18 @@ import { useSectionInView } from "@/lib/hooks";
 import { Icon } from "@iconify/react";
 import { AnimatePresence, motion } from "framer-motion";
 
-const ProjectCard = ({ project, isSelected, onClick }) => (
+interface Project {
+  title: string;
+  mediaUrl: string;
+  tags: string[];
+  link: {
+    live?: string;
+    source: string;
+  };
+  description: string;
+}
+
+const ProjectCard = ({ project, isSelected, onClick }: { project: Project; isSelected: boolean; onClick: (project: Project) => void }) => (
   <motion.div
     layout
     onClick={() => onClick(project)}
