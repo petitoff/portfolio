@@ -4,7 +4,7 @@ import { Icon } from '@iconify/react';
 
 const Intro = () => {
   return (
-    <section className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b  text-white px-4">
+    <section className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b text-white px-4">
       <div className="max-w-4xl mx-auto text-center">
         <motion.div
           className="mb-8 flex items-center justify-center gap-2"

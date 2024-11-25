@@ -78,12 +78,9 @@ export const projectsData: IProject[] = [
     tags: [
       "React & Vite",
       "TypeScript",
-      "RTK",
-      "React Router DOM",
       "Nestjs",
       "Postgresql",
       "Tailwind",
-      "Sequelize",
     ],
     mediaUrl: "/devdocket.png",
     mediaType: "image",

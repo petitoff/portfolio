@@ -9,10 +9,10 @@ import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center px-4 pt-20">
+    <main className="flex flex-col items-center px-4">
       <GoogleAnalytics />
 
-      <Header />
+      {/* <Header /> */}
 
       <Intro />
       {/* <SectionDivider /> */}
