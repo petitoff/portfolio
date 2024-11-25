@@ -41,6 +41,7 @@ export const experiencesData = [
     title: "Mid Software Engineer at Progtom",
     location: "Opole, Poland",
     icon: React.createElement(CgWorkAlt),
+    description: "",
     date: "2024 may - present",
   },
   {

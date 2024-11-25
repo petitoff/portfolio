@@ -71,7 +71,7 @@ const ProjectCard = ({ project, isSelected, onClick }: { project: Project; isSel
   </motion.div>
 );
 
-const ProjectDetail = ({ project, onClose }) => (
+const ProjectDetail = ({ project, onClose }: { project: Project; onClose: () => void }) => (
   <motion.div
     initial={{ opacity: 0, y: 50 }}
     animate={{ opacity: 1, y: 0 }}
@@ -152,7 +152,7 @@ const ProjectDetail = ({ project, onClose }) => (
 );
 
 const Projects = () => {
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   
   return (
     <section className="py-20 px-4">
