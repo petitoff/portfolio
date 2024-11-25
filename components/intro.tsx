@@ -1,114 +1,81 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { BsLinkedin } from "react-icons/bs";
-import { HiDownload } from "react-icons/hi";
-import { FaGithubSquare } from "react-icons/fa";
-import { useSectionInView } from "@/lib/hooks";
-import { useActiveSectionContext } from "@/context/active-section-context";
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Icon } from '@iconify/react';
 
-export default function Intro() {
-  const { ref } = useSectionInView("Home", 0.5);
-  const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
-
+const Intro = () => {
   return (
-    <section
-      ref={ref}
-      id="home"
-      className="mb-28 max-w-[50rem] scroll-mt-[100rem] text-center sm:mb-0"
-    >
-      {/* <div className="flex items-center justify-center">
-        <div className="relative">
-          <motion.div
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              type: 'tween',
-              duration: 0.2,
-            }}
+    <section className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b  text-white px-4">
+      <div className="max-w-4xl mx-auto text-center">
+        <motion.div
+          className="mb-8 flex items-center justify-center gap-2"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <Icon icon="mdi:code-braces" className="w-8 h-8 text-purple-400" />
+          <Icon icon="mdi:server" className="w-8 h-8 text-blue-400" />
+          <Icon icon="ph:circles-three-plus-fill" className="w-8 h-8 text-yellow-400" />
+        </motion.div>
+
+        <motion.h1
+          className="text-4xl md:text-6xl font-bold mb-6 leading-tight"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          Hello, I'm <span className="text-purple-400">Błażej</span>
+        </motion.h1>
+
+        <motion.p
+          className="text-xl md:text-2xl mb-12 text-gray-300"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          I'm a mid developer with{" "}
+          <span className="text-purple-400 font-semibold">2 years</span> of experience in{" "}
+          <span className="text-blue-400 font-semibold">Frontend</span> and{" "}
+          <span className="text-yellow-400 font-semibold">Backend</span> technologies.
+        </motion.p>
+
+        <motion.div
+          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+        >
+          <a
+            href="/CV.pdf"
+            download
+            className="flex items-center gap-2 bg-purple-600 hover:bg-purple-700 px-6 py-3 rounded-full font-medium transition-all duration-200 hover:scale-105"
           >
-            <Image
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=368&h=368&q=100"
-              alt="Ricardo portrait"
-              width="192"
-              height="192"
-              quality="95"
-              priority={true}
-              className="h-24 w-24 rounded-full object-cover border-[0.35rem] border-white shadow-xl"
-            />
-          </motion.div>
+            <Icon icon="material-symbols:download" className="w-5 h-5" />
+            Download CV
+          </a>
 
-          <motion.span
-            className="absolute bottom-0 right-0 text-4xl"
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              type: 'spring',
-              stiffness: 125,
-              delay: 0.1,
-              duration: 0.7,
-            }}
-          >
-            👋
-          </motion.span>
-        </div>
-      </div> */}
+          <div className="flex gap-4">
+            <a
+              href="https://linkedin.com/in/blazej-domagala"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 bg-blue-600 hover:bg-blue-700 rounded-full transition-all duration-200 hover:scale-110"
+            >
+              <Icon icon="mdi:linkedin" className="w-6 h-6" />
+            </a>
 
-      <motion.h1
-        className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-      >
-        <span className="font-bold">Hello, I'm Błażej.</span> I'm a{" "}
-        <span className="font-bold">junior developer</span> with{" "}
-        <span className="font-bold">1.5 years</span> of experience in{" "}
-        <span className="font-bold">Frontend and Backend</span> technologies.
-      </motion.h1>
-
-      <motion.div
-        className="flex flex-col items-center justify-center gap-2 px-4 text-lg font-medium sm:flex-row"
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          delay: 0.1,
-        }}
-      >
-        {/* <Link
-          href="#contact"
-          className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
-          onClick={() => {
-            setActiveSection('Contact');
-            setTimeOfLastClick(Date.now());
-          }}
-        >
-          Contact me here{' '}
-          <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
-        </Link> */}
-
-        <a
-          className="borderBlack group flex cursor-pointer items-center gap-2 rounded-full bg-white px-7 py-3 outline-none transition hover:scale-110 focus:scale-110 active:scale-105 dark:bg-white/10"
-          href="/CV.pdf"
-          download
-        >
-          Download CV{" "}
-          <HiDownload className="opacity-60 transition group-hover:translate-y-1" />
-        </a>
-
-        <a
-          className="borderBlack flex cursor-pointer items-center gap-2 rounded-full bg-white p-4 text-gray-700 transition hover:scale-[1.15] hover:text-gray-950 focus:scale-[1.15] active:scale-105 dark:bg-white/10 dark:text-white/60"
-          href="https://linkedin.com/in/blazej-domagala"
-          target="_blank"
-        >
-          <BsLinkedin />
-        </a>
-
-        <a
-          className="borderBlack flex cursor-pointer items-center gap-2 rounded-full bg-white p-4 text-[1.35rem] text-gray-700 transition hover:scale-[1.15] hover:text-gray-950 focus:scale-[1.15] active:scale-105 dark:bg-white/10 dark:text-white/60"
-          href="https://github.com/petitoff"
-          target="_blank"
-        >
-          <FaGithubSquare />
-        </a>
-      </motion.div>
+            <a
+              href="https://github.com/petitoff"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 bg-gray-700 hover:bg-gray-800 rounded-full transition-all duration-200 hover:scale-110"
+            >
+              <Icon icon="mdi:github" className="w-6 h-6" />
+            </a>
+          </div>
+        </motion.div>
+      </div>
     </section>
   );
-}
+};
+
+export default Intro;

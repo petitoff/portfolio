@@ -5,8 +5,6 @@ import Experience from "@/components/experience";
 import Header from "@/components/header";
 import Intro from "@/components/intro";
 import Projects from "@/components/projects";
-import SectionDivider from "@/components/section-divider";
-import Skills from "@/components/skills";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 export default function Home() {
@@ -17,11 +15,11 @@ export default function Home() {
       <Header />
 
       <Intro />
-      <SectionDivider />
+      {/* <SectionDivider /> */}
       <About />
       <Projects />
       <Experience />
-      <Skills />
+      {/* <Skills /> */}
       {/* <Contact /> */}
     </main>
   );

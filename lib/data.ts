@@ -7,6 +7,7 @@ import bookshelfImg from "@/public/bookshelf.png";
 import rmtdevImg from "@/public/rmtdev.png";
 import wordanalyticsImg from "@/public/wordanalytics.png";
 import { StaticImageData } from "next/image";
+import { describe } from "node:test";
 
 export const links = [
   {
@@ -37,6 +38,12 @@ export const links = [
 
 export const experiencesData = [
   {
+    title: "Mid Software Engineer at Progtom",
+    location: "Opole, Poland",
+    icon: React.createElement(CgWorkAlt),
+    date: "2024 may - present",
+  },
+  {
     title: "University Of Opole",
     location: "IT engineer",
     description:
@@ -59,7 +66,7 @@ export const experiencesData = [
       "I worked on creating a mobile application with events and restaurants in your area. The application was also used in field games.",
     icon: React.createElement(FaReact),
     date: "2022 August - 2023 January",
-  },
+  }
 ] as const;
 
 export const projectsData: IProject[] = [
@@ -95,18 +102,18 @@ export const projectsData: IProject[] = [
       live: "https://bookshelf-petitoff.vercel.app/books",
       source: "https://github.com/petitoff/bookshelf",
     },
-  },
-  {
-    title: "Robotic Painting Simulator",
-    description:
-      "I created a robotic painting simulator in WPF. It was a project for senior interview. The application allows you to create a painting and then simulate the painting process. I used C# and .NET Framework. I also used the MVVM pattern, implemented the INotifyPropertyChanged interface, and used the ICommand interface and implemented dependency injection.",
-    tags: ["C#", ".NET Framework", "WPF"],
-    mediaUrl: "/RoboticPaintingSimulator.mp4",
-    mediaType: "video",
-    link: {
-      source: "https://github.com/petitoff/RoboticPaintingSimulator",
-    },
-  },
+  }
+  // {
+  //   title: "Robotic Painting Simulator",
+  //   description:
+  //     "I created a robotic painting simulator in WPF. It was a project for senior interview. The application allows you to create a painting and then simulate the painting process. I used C# and .NET Framework. I also used the MVVM pattern, implemented the INotifyPropertyChanged interface, and used the ICommand interface and implemented dependency injection.",
+  //   tags: ["C#", ".NET Framework", "WPF"],
+  //   mediaUrl: "/RoboticPaintingSimulator.mp4",
+  //   mediaType: "video",
+  //   link: {
+  //     source: "https://github.com/petitoff/RoboticPaintingSimulator",
+  //   },
+  // },
 ];
 
 export interface IProject {
