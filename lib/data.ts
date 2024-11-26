@@ -74,7 +74,7 @@ export const projectsData: IProject[] = [
   {
     title: "Dev Docket",
     description:
-      "I created Dev Docket, an application for managing projects and teams, which provides comprehensive task and project management, progress tracking, collaboration, access control, issue tracking, and availability through web browsers. I implemented Kanban Board to clearly present tasks. Each task contains a description that supports markdown, adding links and embedding images using links.",
+      "Dev Docket is a web-based project management system featuring Kanban methodology, markdown-supported task descriptions, and comprehensive team collaboration capabilities integrated into a unified platform.",
     tags: [
       "React & Vite",
       "TypeScript",
